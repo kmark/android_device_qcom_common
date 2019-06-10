@@ -451,14 +451,6 @@ void set_feature(struct power_module *module, feature_t feature, int state)
     set_device_specific_feature(module, feature, state);
 }
 
-int get_feature(struct power_module *module __unused, feature_t feature)
-{
-    if (feature == POWER_FEATURE_SUPPORTED_PROFILES) {
-        return get_number_of_profiles();
-    }
-    return -1;
-}
-
 static int power_open(const hw_module_t* module, const char* name,
                     hw_device_t** device)
 {
@@ -479,7 +471,6 @@ static int power_open(const hw_module_t* module, const char* name,
             dev->powerHint = power_hint;
             dev->setInteractive = set_interactive;
             dev->setFeature = set_feature;
-            dev->getFeature = get_feature;
             dev->get_number_of_platform_modes = NULL;
             dev->get_platform_low_power_stats = NULL;
             dev->get_voter_list = NULL;
@@ -513,6 +504,5 @@ struct power_module HAL_MODULE_INFO_SYM = {
     .init = power_init,
     .powerHint = power_hint,
     .setInteractive = set_interactive,
-    .setFeature = set_feature,
-    .getFeature = get_feature
+    .setFeature = set_feature
 };
