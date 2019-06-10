@@ -71,10 +71,6 @@ static int profile_power_save_8952[] = {
     CPU2_MAX_FREQ_NONTURBO_MAX, CPU3_MAX_FREQ_NONTURBO_MAX,
 };
 
-int get_number_of_profiles() {
-    return 3;
-}
-
 static void set_power_profile(int profile) {
 
     if (profile == current_power_profile)

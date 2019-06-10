@@ -51,10 +51,6 @@ static int current_power_profile = PROFILE_BALANCED;
 
 extern void interaction(int duration, int num_args, int opt_list[]);
 
-int get_number_of_profiles() {
-    return 5;
-}
-
 static int profile_high_performance[] = {
     SCHED_BOOST_ON_V3, 0x1,
     ALL_CPUS_PWR_CLPS_DIS_V3, 0x1,

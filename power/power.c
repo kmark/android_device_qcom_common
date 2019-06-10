@@ -219,11 +219,6 @@ int __attribute__ ((weak)) set_interactive_override(
     return HINT_NONE;
 }
 
-int __attribute__ ((weak)) get_number_of_profiles()
-{
-    return 0;
-}
-
 #ifdef SET_INTERACTIVE_EXT
 extern void cm_power_set_interactive_ext(int on);
 #endif

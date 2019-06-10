@@ -49,10 +49,6 @@
 
 static int first_display_off_hint;
 
-int get_number_of_profiles() {
-    return 3;
-}
-
 static int current_power_profile = PROFILE_BALANCED;
 
 static void set_power_profile(int profile) {

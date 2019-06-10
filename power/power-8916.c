@@ -60,10 +60,6 @@ char scaling_min_freq[4][80] ={
 
 static int slack_node_rw_failed = 0;
 
-int get_number_of_profiles() {
-    return 3;
-}
-
 static int current_power_profile = PROFILE_BALANCED;
 
 /**

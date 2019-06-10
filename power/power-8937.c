@@ -84,10 +84,6 @@ static int profile_bias_performance[] = {
     MIN_FREQ_BIG_CORE_0, 0x540,
 };
 
-int get_number_of_profiles() {
-    return 5;
-}
-
 static void set_power_profile(int profile) {
 
     if (profile == current_power_profile)

@@ -47,10 +47,6 @@
 #include "performance.h"
 #include "power-common.h"
 
-int get_number_of_profiles() {
-    return 5;
-}
-
 static int current_power_profile = PROFILE_BALANCED;
 
 static void set_power_profile(int profile) {

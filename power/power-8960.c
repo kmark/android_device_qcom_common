@@ -50,10 +50,6 @@
 
 static int current_power_profile = PROFILE_BALANCED;
 
-int get_number_of_profiles() {
-    return 3;
-}
-
 /**
  * If target is 8064:
  *     return 1
