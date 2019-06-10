@@ -344,10 +344,6 @@ int  set_interactive_override(struct power_module *module __unused, int on)
 
 int power_hint_override(struct power_module *module __unused, power_hint_t hint, void *data)
 {
-    if (hint == POWER_HINT_SET_PROFILE) {
-        set_power_profile(*(int32_t *)data);
-    }
-
     // Skip other hints in custom power modes
     if (current_power_profile != PROFILE_BALANCED) {
         return HINT_HANDLED;

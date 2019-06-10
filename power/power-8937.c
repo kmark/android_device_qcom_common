@@ -148,11 +148,6 @@ int power_hint_override(__unused struct power_module *module, power_hint_t hint,
         SCHED_BOOST_ON_V3, 0x1,
     };
 
-    if (hint == POWER_HINT_SET_PROFILE) {
-        set_power_profile(*(int32_t *)data);
-        return HINT_HANDLED;
-    }
-
     // Skip other hints in power save mode
     if (current_power_profile == PROFILE_POWER_SAVE) {
         return HINT_HANDLED;

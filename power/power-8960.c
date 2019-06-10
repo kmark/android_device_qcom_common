@@ -123,11 +123,6 @@ static void set_power_profile(int profile) {
 int power_hint_override(__attribute__((unused)) struct power_module *module,
         power_hint_t hint, void *data)
 {
-    if (hint == POWER_HINT_SET_PROFILE) {
-        set_power_profile(*(int32_t *)data);
-        return HINT_HANDLED;
-    }
-
     /* Skip other hints in power save mode */
     if (current_power_profile == PROFILE_POWER_SAVE) {
         return HINT_HANDLED;

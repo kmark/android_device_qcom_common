@@ -153,11 +153,6 @@ static int process_video_encode_hint(void *metadata)
 int power_hint_override(__attribute__((unused)) struct power_module *module,
         power_hint_t hint, void *data)
 {
-    if (hint == POWER_HINT_SET_PROFILE) {
-        set_power_profile(*(int32_t *)data);
-        return HINT_HANDLED;
-    }
-
     // Skip other hints in custom power modes
     if (current_power_profile == PROFILE_POWER_SAVE) {
         return HINT_HANDLED;

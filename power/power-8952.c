@@ -127,11 +127,6 @@ int  power_hint_override(struct power_module *module, power_hint_t hint,
         0x3d01,
     };
 
-    if (hint == POWER_HINT_SET_PROFILE) {
-        set_power_profile(*(int32_t *)data);
-        return HINT_HANDLED;
-    }
-
     // Skip other hints in custom power modes
     if (current_power_profile != PROFILE_BALANCED) {
         return HINT_HANDLED;

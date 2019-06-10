@@ -226,11 +226,6 @@ int power_hint_override(__unused struct power_module *module,
         MIN_FREQ_BIG_CORE_0, 0x3E8,
     };
 
-    if (hint == POWER_HINT_SET_PROFILE) {
-        set_power_profile(*(int32_t *)data);
-        return HINT_HANDLED;
-    }
-
     /* Skip other hints in power save mode */
     if (current_power_profile == PROFILE_POWER_SAVE)
         return HINT_HANDLED;
